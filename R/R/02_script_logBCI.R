@@ -5,7 +5,7 @@ library(multcomp)
 library(ggplot2)
 library(forcats)
 
-datam<-read.csv(file='data/body_condition.csv', h=T)
+datam<-read.csv(file='input/body_condition.csv', h=T)
 
 #prepare data for violin plot of BCI per sex and locality
 datam$loc <- fct_relevel(datam$loc, "k", "b", "p")
@@ -92,3 +92,4 @@ em_model <- emmeans(best_model_cohort, "cohort")
 posthoc_table <- pairs(em_model, adjust = "tukey")
 posthoc_df <- as.data.frame(posthoc_table)
 write.csv(posthoc_df, "output/cohort_BCI_posthocComparisons.csv", row.names = FALSE)
+
