@@ -30,6 +30,8 @@ BCIplot<-ggplot(datam, aes(x = loc, y = BCI, fill = sex)) +
     fill = "sex",) +
   theme(text = element_text(size = 10), axis.title = element_text(size=12), plot.title = element_text(face = "bold", hjust = 0.5, vjust = 0), panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
+BCIplot
+
 library(Cairo)
 ggsave("figures/BCI_plot.png", plot = BCIplot, width = 6, height = 4, dpi = 300, type = "cairo")
 ggsave("figures/BCI_plot.pdf", plot = BCIplot, width = 6, height = 4)
@@ -92,4 +94,5 @@ em_model <- emmeans(best_model_cohort, "cohort")
 posthoc_table <- pairs(em_model, adjust = "tukey")
 posthoc_df <- as.data.frame(posthoc_table)
 write.csv(posthoc_df, "output/cohort_BCI_posthocComparisons.csv", row.names = FALSE)
+
 
