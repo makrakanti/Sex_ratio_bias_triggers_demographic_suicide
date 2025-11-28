@@ -1,4 +1,4 @@
-data_age<-read.csv(file="data/clutch_size.csv", h=T)
+data_age<-read.csv(file="input/clutch_size.csv", h=T)
 
 library(lme4)
 library(DHARMa)
@@ -116,3 +116,4 @@ plot
 library(Cairo)
 ggsave("figures/BM-eggs.png", plot = plot, width = 6, height = 4, dpi = 300, type = "cairo")
 ggsave("figures/BM-eggs.pdf", plot = plot, width = 6, height = 4)
+
