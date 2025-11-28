@@ -1,11 +1,11 @@
 library(MASS)
 library(boot)
 
-estim_betaks<-read.csv2('data/Konjsko_Betas.csv',h=T)
-varcovks<-read.csv2('data/Konjsko_VarCov.csv',h=F)
+estim_betaks<-read.csv2('input/Konjsko_Betas.csv',h=T)
+varcovks<-read.csv2('input/Konjsko_VarCov.csv',h=F)
 
-estim_beta<-read.csv2('data/Golem_Grad_Betas.csv',h=T)
-varcov<-read.csv2('data/Golem_Grad_VarCov.csv',h=F)
+estim_beta<-read.csv2('input/Golem_Grad_Betas.csv',h=T)
+varcov<-read.csv2('input/Golem_Grad_VarCov.csv',h=F)
 
 numbetaks<-c(4:18)
 lbetaks<-length(numbetaks)
@@ -1068,3 +1068,4 @@ ggsave("figures/Beach_males&females.png", plot = MFBcol, width = 6, height = 4, 
 ggsave("figures/Beach_males&females.pdf", plot = MFBcol, width = 6, height = 4)
 ggsave("figures/Adult_sex ratios.png", plot = SRPBKScolCB, width = 6, height = 4, dpi = 300, type = "cairo")
 ggsave("figures/Adult_sex ratios.pdf", plot = SRPBKScolCB, width = 6, height = 4)
+
